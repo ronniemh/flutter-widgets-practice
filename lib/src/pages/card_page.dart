@@ -14,8 +14,21 @@ class CardPage extends StatelessWidget {
           padding: EdgeInsets.all(10),
           children: <Widget>[
             _cardTipo1(),
-            SizedBox(height: 30.0),
+            SizedBox(height: 20.0),
             _cardTipo2(),
+            SizedBox(height: 20.0),
+            _cardTipo1(),
+            SizedBox(height: 20.0),
+            _cardTipo2(),
+            SizedBox(height: 20.0),
+            _cardTipo1(),
+            SizedBox(height: 20.0),
+            _cardTipo2(),
+            SizedBox(height: 20.0),
+            _cardTipo1(),
+            SizedBox(height: 20.0),
+            _cardTipo2(),
+            SizedBox(height: 20.0),
           ],
         ),
       ),
@@ -25,6 +38,8 @@ class CardPage extends StatelessWidget {
 
 Widget _cardTipo1() {
   return Card(
+    elevation: 10.0,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
     child: Column(
       children: <Widget>[
         ListTile(
@@ -51,25 +66,42 @@ Widget _cardTipo1() {
 }
 
 Widget _cardTipo2() {
-  return Card(
+  final card = Container(
+    //clipBehavior: ,
     child: Column(
       children: <Widget>[
         FadeInImage(
-          image: NetworkImage('https://iso.500px.com/wp-content/uploads/2014/07/big-one.jpg'),
+          image: NetworkImage(
+              'https://iso.500px.com/wp-content/uploads/2014/07/big-one.jpg'),
           placeholder: AssetImage('assets/jar-loading.gif'),
           fadeInDuration: Duration(milliseconds: 200),
-          height: 300.0,
+          height: 250.0,
           fit: BoxFit.cover,
         ),
         //Image(
         //  image: NetworkImage(
         //      'https://iso.500px.com/wp-content/uploads/2014/07/big-one.jpg'),
         //),
-        Container(
-          padding: EdgeInsets.all(10.0),
-          child: Text('Hi!')
-          )
+        Container(padding: EdgeInsets.all(10.0), child: Text('Hi!'))
       ],
+    ),
+  );
+  return Container(
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20.0),
+        color: Colors.white,
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+              color: Colors.black38,
+              blurRadius: 10.0,
+              spreadRadius: 2.0,
+              offset: Offset(2.0, 10.0))
+        ]
+        //color: Colors.red,
+        ),
+    child: ClipRRect(
+      child: card,
+      borderRadius: BorderRadius.circular(30.0),
     ),
   );
 }
