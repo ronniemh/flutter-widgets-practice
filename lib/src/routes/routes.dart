@@ -4,6 +4,7 @@ import 'package:flutter_widget_practice/src/pages/animated_container.dart';
 import 'package:flutter_widget_practice/src/pages/avatar_page.dart';
 import 'package:flutter_widget_practice/src/pages/card_page.dart';
 import 'package:flutter_widget_practice/src/pages/home_page.dart';
+import 'package:flutter_widget_practice/src/pages/input_page.dart';
 
 Map<String, WidgetBuilder> gettApplicationRoutes() {
   return <String, WidgetBuilder>{
@@ -12,5 +13,6 @@ Map<String, WidgetBuilder> gettApplicationRoutes() {
     'avatar': (BuildContext context) => AvatarPage(),
     'card': (BuildContext context) => CardPage(),
     'animatedContainer': (BuildContext context) => AnimatedContainePage(),
+    'inputs': (BuildContext context) => InputPage(),
   };
 }
